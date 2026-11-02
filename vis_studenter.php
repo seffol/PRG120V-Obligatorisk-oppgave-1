@@ -16,17 +16,17 @@
 
   print ("<h3>Registrerte Studenter</h3>");
   print ("<table border=1>");  
-  print ("<tr><th align=left>postnr</th> <th align=left>poststed</th></tr>"); 
+  print ("<tr><th align=left>brukernavn</th> <th align=left>fornavn</th> <th align=left>etternavn</th> <th align=left>klassekode</th></tr>");
 
   for ($r=1;$r<=$antallRader;$r++)
     {
       $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra sp�rringsresultatet */
-      $brukernavn=$rad["Brukernavn"];        /* ELLER $postnr=$rad[0]; */
-      $fornavn=$rad["Fornavn"]; 
-      $etternavn=$rad["Etternavn"];
-      $klassekode=$rad["Klassekode"]; 
+      $brukernavn=$rad["brukernavn"];        /* ELLER $postnr=$rad[0]; */
+      $fornavn=$rad["fornavn"]; 
+      $etternavn=$rad["etternavn"];
+      $klassekode=$rad["klassekode"]; 
 
-      print ("<tr> <td> $fornavn </td> <td> $etternavn </td> </tr>");
+      print ("<tr> <td> $brukernavn </td> <td> $fornavn </td> <td> $etternavn </td> <td> $klassekode </td> </tr>");
     }
   print ("</table>"); 
 ?>
