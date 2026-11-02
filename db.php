@@ -1,0 +1,11 @@
+<?php
+$host = getenv('DB_HOST');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_DATABASE');
+
+$connect = mysqli_connect($server, $brukernavn, $passord, $database);
+
+if (!$connect) {
+    die("Kunne ikke koble til databasen: " . mysqli_connect_error());
+}
