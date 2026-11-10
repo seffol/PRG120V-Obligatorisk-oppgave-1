@@ -1,4 +1,4 @@
-# PRG120V-Oblig
+# PRG120V-Obligatorisk
 
 A simple web application for registering classes and students. It is made with PHP and MySQL.
 
