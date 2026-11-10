@@ -1,8 +1,5 @@
-<?php  /* vis-alle-poststeder */
-/*
-/*  Programmet skriver ut alle registrerte poststeder
-*/
-  include("db.php");  /* tilkobling til database-serveren utf�rt og valg av database foretatt */
+<?php
+  include("db.php");
 ?>
   <p><a href="index.html">Tilbake til hovedsiden</a></p>
 
@@ -10,9 +7,8 @@
   $sqlSetning="SELECT * FROM student;";
   
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-    /* SQL-setning sendt til database-serveren */
 	
-  $antallRader=mysqli_num_rows($sqlResultat);  /* antall rader i resultatet beregnet */
+  $antallRader=mysqli_num_rows($sqlResultat);  
 
   print ("<h3>Registrerte Studenter</h3>");
   print ("<table border=1>");  
@@ -20,8 +16,8 @@
 
   for ($r=1;$r<=$antallRader;$r++)
     {
-      $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra sp�rringsresultatet */
-      $brukernavn=$rad["brukernavn"];        /* ELLER $postnr=$rad[0]; */
+      $rad=mysqli_fetch_array($sqlResultat);  
+      $brukernavn=$rad["brukernavn"];        
       $fornavn=$rad["fornavn"]; 
       $etternavn=$rad["etternavn"];
       $klassekode=$rad["klassekode"]; 

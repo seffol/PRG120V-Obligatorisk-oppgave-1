@@ -1,8 +1,4 @@
-<?php  /* slett_student */
-/*
-/*  Programmet lager et skjema for å velge en student som skal slettes
-/*  Programmet sletter den valgte studenten
-*/
+<?php 
 
 include("db.php");
 ?>
@@ -20,7 +16,7 @@ include("db.php");
           $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
           $antallRader=mysqli_num_rows($sqlResultat);
 
-          if ($antallRader==0)  /* studenten er ikke registrert */
+          if ($antallRader==0) 
             {
               print ("Student finnes ikke <br /><br />");
             }
@@ -28,7 +24,7 @@ include("db.php");
             {
               $sqlSetning="DELETE FROM student WHERE brukernavn='$brukernavn';";
               mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-                /* SQL-setning sendt til database-serveren */
+              
 
               print ("F&oslash;lgende student er n&aring; slettet: $brukernavn <br /><br />");
             }
@@ -40,7 +36,6 @@ include("db.php");
   <select id="student" name="student" required>
     <option value="">Velg student</option>
 <?php
-  /* ENDRET: listeboksen fylles med studentene fra databasen */
   $sqlSetning="SELECT * FROM student ORDER BY brukernavn;";
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
 
@@ -51,7 +46,6 @@ include("db.php");
       $etternavn=$rad["etternavn"];
 
       print ("<option value='$bn'>$bn - $fornavn $etternavn</option>");
-      /* value er det som sendes til PHP (brukernavnet), teksten er det brukeren ser */
     }
 ?>
   </select> <br/>

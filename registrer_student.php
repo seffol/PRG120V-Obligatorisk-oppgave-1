@@ -1,10 +1,5 @@
 <?php
-/* registrer_student */
-/*
-/*  Programmet lager et html-skjema for å registrere en student
-/*  Programmet registrerer data (brukernavn, fornavn, etternavn og klassekode) i databasen
-*/
-include("db.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+include("db.php");
 ?>
 
 <h3>Registrer student</h3>
@@ -53,7 +48,6 @@ include("db.php");  /* tilkobling til database-serveren utført og valg av datab
         {
           $sqlSetning="INSERT INTO student (brukernavn, fornavn, etternavn, klassekode) VALUES('$brukernavn','$fornavn','$etternavn','$klassekode');";
           mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; registrere data i databasen");
-          /* SQL-setning sendt til database-serveren */
 
           print ("F&oslash;lgende student er n&aring; registrert: $brukernavn $fornavn $etternavn $klassekode");
         }

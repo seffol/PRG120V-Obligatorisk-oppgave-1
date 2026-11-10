@@ -1,15 +1,11 @@
-<?php  /* vis_klasser */
-/*
-/*  Programmet skriver ut alle registrerte klasser
-*/
-  include("db.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+<?php
+  include("db.php"); 
 
   $sqlSetning="SELECT * FROM klasse ORDER BY klassekode;";
 
   $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
-    /* SQL-setning sendt til database-serveren */
 
-  $antallRader=mysqli_num_rows($sqlResultat);  /* antall rader i resultatet beregnet */
+  $antallRader=mysqli_num_rows($sqlResultat);  
 ?>
 
 <p><a href="index.html">Tilbake til hovedsiden</a></p>
@@ -21,7 +17,7 @@
 
   for ($r=1;$r<=$antallRader;$r++)
     {
-      $rad=mysqli_fetch_array($sqlResultat);  /* ny rad hentet fra spørringsresultatet */
+      $rad=mysqli_fetch_array($sqlResultat);  
       $klassekode=$rad["klassekode"];
       $klassenavn=$rad["klassenavn"];
       $studiumkode=$rad["studiumkode"];

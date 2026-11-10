@@ -1,10 +1,5 @@
 <?php
-/* registrer_klasse */
-/*
-/*  Programmet lager et html-skjema for å registrere en klasse
-/*  Programmet registrerer data (klassekode, klassenavn og studiumkode) i databasen
-*/
-include("db.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+include("db.php");
 ?>
 
 <h3>Registrer klasse</h3>

@@ -1,10 +1,5 @@
 <?php
-/* slett_klasse */
-/*
-/*  Programmet lager et skjema for å velge en klasse som skal slettes
-/*  Programmet sletter den valgte klassen, men ikke hvis klassen har studenter
-*/
-include("db.php");  /* tilkobling til database-serveren utført og valg av database foretatt */
+include("db.php");  
 ?>
 
 <p><a href="index.html">Tilbake til hovedsiden</a></p>
@@ -16,12 +11,11 @@ include("db.php");  /* tilkobling til database-serveren utført og valg av datab
     {
       $klassekode=$_POST["klassekode"];
 
-      /* sjekker om det finnes studenter i klassen */
       $sqlSetning="SELECT * FROM student WHERE klassekode='$klassekode';";
       $sqlResultat=mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; hente data fra databasen");
       $antallRader=mysqli_num_rows($sqlResultat);
 
-      if ($antallRader!=0)  /* klassen har studenter */
+      if ($antallRader!=0) 
         {
           print ("Klassen $klassekode kan ikke slettes fordi den har studenter <br /><br />");
         }
@@ -29,7 +23,6 @@ include("db.php");  /* tilkobling til database-serveren utført og valg av datab
         {
           $sqlSetning="DELETE FROM klasse WHERE klassekode='$klassekode';";
           mysqli_query($db,$sqlSetning) or die ("ikke mulig &aring; slette data i databasen");
-          /* SQL-setning sendt til database-serveren */
 
           print ("Klassen $klassekode er n&aring; slettet <br /><br />");
         }
