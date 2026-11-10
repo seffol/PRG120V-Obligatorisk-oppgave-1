@@ -1,6 +1,6 @@
 # PRG120V-Oblig
 
-A simple web application for registering classes and students. It is made with PHP and MySQL for the course PRG120V (Obligatorisk oppgave 1).
+A simple web application for registering classes and students. It is made with PHP and MySQL.
 
 ## Content
 
